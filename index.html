@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Експертни гръцки преводи писмени и устни във Варна, България. Над 20 години опит в преводите от и на гръцки език.">
+<title>Metafraseis – Професионални Гръцки Преводи</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap" media="print" onload="this.media='all'">
+
+<style>
+:root {
+  --black: #0a0a0a;
+  --black-2: #111111;
+  --black-3: #1a1a1a;
+  --yellow: #f5c800;
+  --white: #fafafa;
+  --gray: #b0b0b0;
+  --border: rgba(255,255,255,0.08);
+}
+a, a:visited {
+  color: #ff4d4d;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff1a1a;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; background: var(--black); font-size: 16px; }
+body { background: var(--black); color: var(--white); font-family: 'DM Sans', sans-serif; line-height: 1.6; overflow-x: hidden; }
+
+/* --- NAVIGATION --- */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 1000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.2rem 5vw; background: rgba(10,10,10,0.9); border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+.nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; text-decoration: none; color: white; letter-spacing: 0.05em; }
+.nav-logo span { color: var(--yellow); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { color: var(--gray); text-decoration: none; font-size: 0.85rem; text-transform: uppercase; transition: 0.3s; }
+.nav-links a:hover { color: var(--yellow); }
+
+/* --- HERO SECTION (ОРИГИНАЛНА) --- */
+.hero {
+  min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
+  padding: 0 5vw; position: relative; overflow: hidden;
+}
+.hero-greek-letter {
+  position: absolute; right: -5vw; top: 50%; transform: translateY(-50%);
+  font-family: 'Bebas Neue', sans-serif; font-size: clamp(20rem, 45vw, 50rem);
+  color: rgba(245,200,0,0.03); pointer-events: none; z-index: 0;
+}
+.hero-content { position: relative; z-index: 1; }
+.hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(4rem, 12vw, 9rem); line-height: 0.85; margin-bottom: 1.5rem; }
+.hero h1 span { color: var(--yellow); display: block; }
+.hero-sub { max-width: 550px; font-size: 1.15rem; color: var(--gray); margin-bottom: 2.5rem; }
+
+/* --- BUTTONS --- */
+.btn-primary { background: var(--yellow); color: var(--black); padding: 1.1rem 2.2rem; text-decoration: none; font-weight: 700; display: inline-block; border-radius: 2px; transition: 0.3s; }
+.btn-primary:hover { background: white; }
+
+/* --- IMAGES --- */
+.full-width-image { width: 100%; height: 500px; object-fit: cover; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); display: block; }
+
+/* --- ABOUT US --- */
+section { padding: 7rem 5vw; }
+.about { background: var(--black); }
+.about-content { max-width: 900px; margin: 0 auto; }
+.about h2 { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; margin-bottom: 2rem; }
+.about p { font-size: 1.15rem; color: var(--gray); margin-bottom: 1.5rem; }
+
+/* --- SERVICES (3x2 GRID) --- */
+.services { background: var(--black-2); }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+.service-card { background: var(--black-3); padding: 3rem 2rem; border: 1px solid var(--border); text-align: center; transition: 0.3s; }
+.service-card:hover { border-color: var(--yellow); transform: translateY(-8px); }
+.service-icon { font-size: 2.5rem; margin-bottom: 1.5rem; display: block; }
+.service-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--yellow); margin-bottom: 1rem; }
+
+/* --- FAQ & REVIEWS --- */
+.faq-container { max-width: 850px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-trigger { width: 100%; background: none; border: none; color: white; padding: 1.5rem 0; text-align: left; cursor: pointer; display: flex; justify-content: space-between; font-size: 1.1rem; }
+.faq-content { max-height: 0; overflow: hidden; transition: 0.3s ease-out; color: var(--gray); }
+.faq-item.active .faq-content { max-height: 250px; padding-bottom: 1.5rem; }
+
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+.review-card { background: var(--black-2); padding: 2rem; border: 1px solid var(--border); border-top: 3px solid var(--yellow); }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .full-width-image { height: 300px; }
+  .hero h1 { font-size: 4.5rem; }
+}
+
+.reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Meta<span>fraseis</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">За нас</a></li>
+    <li><a href="#services">Услуги</a></li>
+    <li><a href="#faq">ЧЗВ</a></li>
+    <li><a href="#reviews">Отзиви</a></li>
+    <li><a href="#contact">Контакт</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-greek-letter">Ω</div>
+  <div class="hero-content reveal">
+    <div style="color: var(--yellow); text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700; margin-bottom: 1rem;">Certified Greek Translations Services</div>
+    <h1>Гръцки<span>Преводи</span></h1>
+    <p class="hero-sub">Професионални езикови решения от носители на езика. Повече от 20 години опит и безкомпромисна точност.</p>
+    <a href="#contact" class="btn-primary">Запитване за оферта</a>
+  </div>
+</section>
+
+     <img src="greek-translator-interpreter.jpg" alt="гръцки преводачи" class="full-width-image reveal" width="1600" height="500">
+
+<section class="about" id="about">
+  <div class="about-content reveal">
+    <h2 style="text-align: center;">Кои сме <span>ние?</span></h2>
+    <p><strong>Metafraseis</strong> е специализирана агенция за професионални езикови преводи, основана през <strong>2006 година</strong>. Повече от две десетилетия ние сме доверен партньор на десетки български и гръцки компании и частни лица, които са изпозлвали нашите услуги през всички тези години.</p>
+    <p>Нашият екип се състои от лицензирани преводачи носители на езика (гръцки, български, английски), което гарантира не просто превод, а пълна езикова и културна локализация. Предлагаме широк спектър от услуги – от официални съдебни документи до бизнес консултации и лична асистенция за гърци във Варна и региона.</p>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <h2 class="reveal" style="text-align: center; margin-bottom: 3rem;">Нашите <span>Услуги</span></h2>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <span class="service-icon">🌐</span>
+      <h3>Уеб сайтове</h3>
+      <p><a href="https://prevodi.elpak.net/prevod-na-sait-greek.html" target="_blank">Професионална локализация на сайтове</a> с фокус върху SEO и гръцкия пазар.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🏛️</span>
+      <h3>Общински документи</h3>
+      <p><a href="https://prevodi.elpak.net/obshtinski-dokumenti-prevodi.html" target="_blank">Превод на актове за раждане</a>, гражданско състояние и общински удостоверения.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">⚕️</span>
+      <h3>Медицински преводи</h3>
+      <p><a href="https://prevodi.elpak.net/meditsinski-prevodi-gratski.html" target="_blank">Медицински преводи на гръцки</a> Прецизен превод на епикризи, изследвания и медицински експертизи.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">📍</span>
+      <h3>Личен асистент</h3>
+      <p><a href="https://prevodi.elpak.net/lichen-asistent-na-gartsi-v-bulgaria.html" target="_blank">Придружаване и превод за гръцки граждани във Варна</a> пред институции и банки.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">⚖️</span>
+      <h3>Съдебни преводи</h3>
+      <p>Сертифицирани преводи за нуждите на съда, прокуратурата и нотариуси.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🎙️</span>
+      <h3>Устни преводи</h3>
+      <p><a href="https://prevodi.elpak.net/usten-prevod-greek.html" target="_blank">Консекутивен и симултанен превод на гръцки при бизнес срещи и конференции.</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <h2 class="reveal" style="text-align: center;">Въпроси и <span>Отговори</span></h2>
+  <div class="faq-container reveal">
+    <div class="faq-item">
+      <button class="faq-trigger" onclick="toggleFaq(this)">Каква е цената за писмен превод? <span>+</span></button>
+      <div class="faq-content"><p>Цената се определя на база стандартна преводаческа страница (1800 знака) и сложността на терминологията. Изпратете ни Вашият текст на мейла и ще направим индивидуална оферта.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-trigger" onclick="toggleFaq(this)">Извършвате ли легализация? <span>+</span></button>
+      <div class="faq-content"><p>Да, работим с оторизирани фирми за легализация и поставяне на Апостил в МВнР.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-trigger" onclick="toggleFaq(this)">Какви са сроковете за изпълнение? <span>+</span></button>
+      <div class="faq-content"><p>Стандартният срок е 2-3 работни дни, но предлагаме и експресни услуги в рамките на 24 часа.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-trigger" onclick="toggleFaq(this)">Каква е цената за устен превод? <span>+</span></button>
+      <div class="faq-content"><p>Ценообразуването при устните преводи се определя на база ангажираност на час и е 40 евро. При ангажименти извън рамките на град Варна, всички транспортни разходи и евентуални разходи за престой се калкулират допълнително към основната цена. Моля, свържете се с нас предварително за изготвяне на прецизна оферта.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-trigger" onclick="toggleFaq(this)">Превеждате ли техническа документация? <span>+</span></button>
+      <div class="faq-content"><p>Разбира се. Имаме богат опит с ръководства за експлоатация, чертежи и спецификации.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" style="background: var(--black-2);">
+  <h2 class="reveal" style="text-align: center;">Отзиви от <span>Клиенти</span></h2>
+  <div class="reviews-grid">
+    <div class="review-card reveal"><p class="review-text">"Най-добрият гръцки преводач, с когото сме работили. Бързина и коректност!"</p><p><strong>— Стефан Найденов</strong></p></div>
+    <div class="review-card reveal"><p class="review-text">"Изключително внимание към детайла при медицинските документи. Благодаря!"</p><p><strong>— Елена Костова</strong></p></div>
+    <div class="review-card reveal"><p class="review-text">"Професионално обслужване при покупка на имот. Всичко мина перфектно."</p><p><strong>— Г-н Кондопулос</strong></p></div>
+    <div class="review-card reveal"><p class="review-text">"Бързи, точни и на много разумни цени. Препоръчвам горещо!"</p><p><strong>— "Логистик Плюс"</strong></p></div>
+    <div class="review-card reveal"><p class="review-text">"Преводът на нашия сайт беше направен с усет към езика, а не буквално."</p><p><strong>— Web Design Studio</strong></p></div>
+    <div class="review-card reveal"><p class="review-text">"Благодарим за съдействието пред гръцките власти. Спасихте ни много време."</p><p><strong>— Сем. Димитрови</strong></p></div>
+    <div class="review-card reveal"><p class="review-text">"Високо ниво на устните преводи по време на бизнес конференцията ни."</p><p><strong>— Инвест Груп</strong></p></div>
+    <div class="review-card reveal"><p class="review-text">"Официалните преводи бяха приети от посолството без никакви забележки."</p><p><strong>— Петър Иванов</strong></p></div>
+  </div>
+</section>
+
+<footer id="contact" style="padding: 5rem 5vw; border-top: 1px solid var(--border);">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 4rem;">
+    <div>
+      <h3 style="font-family: 'Bebas Neue'; font-size: 2rem; color: var(--yellow);">METAFRASEIS</h3>
+      <p style="color: var(--gray); margin-top: 1rem;">Гръцки преводач Варна</p>
+     <a href="https://prevodi.elpak.net" target="_blank"><p style="color: var(--gray); margin-top: 1rem;">Професионални гръцки преводи</p></a>
+      <a href="https://blog7.org" target="_blank"><p style="color: var(--gray); margin-top: 1rem;">Изработка и SEO оптимизация на сайтове - blog7.org</p></a>
+    </div>
+    <div>
+      <h4 style="margin-bottom: 1.5rem;">Контакти</h4>
+      <p>гр. Варна, ул. Мусала 11</p>
+      <p>Email: pak69@abv.bg</p>
+      <p>Тел: 0882 94 14 24</p>
+      <p>Viber: +359 882 94 14 24</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// FAQ Toggle
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  item.classList.toggle('active');
+  btn.querySelector('span').textContent = item.classList.contains('active') ? '-' : '+';
+}
+
+// Scroll Reveal Observer
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
